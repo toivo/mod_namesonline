@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>mod_namesonline</name>
+	<author>Toivo Talikka</author>
+	<creationDate>December 2021</creationDate>
+	<copyright>(C) 2005 Open Source Matters, Inc.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>toivo@talikka.com</authorEmail>
+	<authorUrl>www.talikka.com</authorUrl>
+	<version>1.0.0</version>
+	<description>MOD_NAMESONLINE_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_namesonline">mod_namesonline.php</filename>
+		<folder>tmpl</folder>
+		<filename>helper.php</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">en-GB.mod_namesonline.ini</language>
+		<language tag="en-GB">en-GB.mod_namesonline.sys.ini</language>
+	</languages>
+	<help key="JHELP_EXTENSIONS_MODULE_MANAGER_WHO_ONLINE" />
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="showmode"
+					type="list"
+					label="MOD_NAMESONLINE_SHOWMODE_LABEL"
+					description="MOD_NAMESONLINE_SHOWMODE_DESC"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">MOD_NAMESONLINE_FIELD_VALUE_NUMBER</option>
+					<option value="1">MOD_NAMESONLINE_FIELD_VALUE_NAMES</option>
+					<option value="2">MOD_NAMESONLINE_FIELD_VALUE_BOTH</option>
+				</field>
+
+				<field
+					name="filter_groups"
+					type="radio"
+					label="MOD_NAMESONLINE_FIELD_FILTER_GROUPS_LABEL"
+					description="MOD_NAMESONLINE_FIELD_FILTER_GROUPS_DESC"
+					class="btn-group btn-group-yesno"
+					default="0"
+					filter="integer"
+					>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="layout"
+					type="modulelayout"
+					label="JFIELD_ALT_LAYOUT_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC"
+					validate="moduleLayout"
+				/>
+
+				<field
+					name="moduleclass_sfx"
+					type="textarea"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+					rows="3"
+				/>
+
+				<field
+					name="cache"
+					type="list"
+					label="COM_MODULES_FIELD_CACHING_LABEL"
+					description="COM_MODULES_FIELD_CACHING_DESC"
+					default="0"
+					filter="integer"
+					>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+
+				<field
+					name="cache_time"
+					type="number"
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+					default="900"
+					filter="integer"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+
+	<updateservers>
+        <server type="extension" priority="1" name="Names Online Update Site">https://extensions.talikka.com/extensions/mod_namesonline.xml</server>
+    </updateservers>		
+	
+</extension>
